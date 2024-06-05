@@ -38,7 +38,7 @@ MISHI = [
 
 Mukesh = [
     [
-        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/SHIVANSH474"),
+        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/ANIME_KALYUG_04"),
         InlineKeyboardButton(text="▪️ꜱᴜᴘᴘᴏʀᴛ▪️", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -71,7 +71,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.2)
     await m.reply_photo(
         random.choice(MISHI),
-        caption=f"""**ꕤ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](f"t.me/{BOT_USERNAME}") ꕤ**\n\nꕤ **ʟɪʙʀᴀʀʏ ➛** `{lver}`\nꕤ **ᴛᴇʟᴇᴛʜᴏɴ ➛** `{tver}`\nꕤ **ᴘʏʀᴏɢʀᴀᴍ ➛** `{pver}`\nꕤ **ᴘʏᴛʜᴏɴ ➛** `{pyver()}`\n\nꕤ **ᴍᴀᴅᴇ ʙʏ ➛** [sʜɪᴠᴀɴsʜ-xᴅ](tg://user?id={OWNER_ID})""",
+        caption=f"""**ꕤ ʜᴇʏ, ɪ ᴀᴍ [{BOT_NAME}](f"t.me/{BOT_USERNAME}") ꕤ**\n\nꕤ **ʟɪʙʀᴀʀʏ ➛** `{lver}`\nꕤ **ᴛᴇʟᴇᴛʜᴏɴ ➛** `{tver}`\nꕤ **ᴘʏʀᴏɢʀᴀᴍ ➛** `{pver}`\nꕤ **ᴘʏᴛʜᴏɴ ➛** `{pyver()}`\n\nꕤ **ᴍᴀᴅᴇ ʙʏ ➛** [ʜᴀʀsʜɪᴛ](tg://user?id={OWNER_ID})""",
         reply_markup=InlineKeyboardMarkup(Mukesh),
     )
     
