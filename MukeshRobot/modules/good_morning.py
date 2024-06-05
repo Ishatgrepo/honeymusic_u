@@ -33,10 +33,10 @@ PHOTO = "https://telegra.ph/file/1b57ea5abf2f600370b01.mp4"
 
 @register(pattern=("Good morning"))
 async def awake(event):
-    NEKO = f"🌹 ᴡɪsʜɪɴɢ ʏᴏᴜ ᴀ ᴠᴇʀʏ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ Ⰶ\n\n❖ ᴡᴇʟᴄᴏᴍᴇ ᴛʜɪs ʙᴇᴀᴜᴛɪғᴜʟ ᴍᴏʀɴɪɴɢ ᴡɪᴛʜ ᴀ sᴍɪʟᴇ ᴏɴ ʏᴏᴜʀ ғᴀᴄᴇ. I ʜᴏᴘᴇ ʏᴏᴜ ʟʟ ʜᴀᴠᴇ ᴀ ɢʀᴇᴀᴛ ᴅᴀʏ ᴛᴏᴅᴀʏ.\n\nⰆ ᴡɪsʜɪɴɢ ᴛᴏ ➛ {event.sender.first_name}\n\nꕤ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ [˹ 𝗦𝙴𝙽𝙾𝚁𝙸𝚃𝙰 ✘ 𝗥𝙾𝙱𝙾 ˼](https://t.me/StrangerSuperbot)"
+    NEKO = f"🌹 ᴡɪsʜɪɴɢ ʏᴏᴜ ᴀ ᴠᴇʀʏ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ Ⰶ\n\n❖ ᴡᴇʟᴄᴏᴍᴇ ᴛʜɪs ʙᴇᴀᴜᴛɪғᴜʟ ᴍᴏʀɴɪɴɢ ᴡɪᴛʜ ᴀ sᴍɪʟᴇ ᴏɴ ʏᴏᴜʀ ғᴀᴄᴇ. I ʜᴏᴘᴇ ʏᴏᴜ ʟʟ ʜᴀᴠᴇ ᴀ ɢʀᴇᴀᴛ ᴅᴀʏ ᴛᴏᴅᴀʏ.\n\nⰆ ᴡɪsʜɪɴɢ ᴛᴏ ➛ {event.sender.first_name}\n\nꕤ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➛ [˹ ᴀɴɪᴍᴇ ꭙ ʀᴏʙᴏ˼](https://t.me/ANIME_KALYUGBOT)"
     BUTTON = [
         [
-            Button.url("ᴍᴇᴇᴛ ᴍᴇ ʜᴇʀᴇ ʙᴀʙʏ", "https://telegram.dog/MASTIWITHFRIENDSXD"),
+            Button.url("ᴍᴇᴇᴛ ᴍᴇ ʜᴇʀᴇ ʙᴀʙʏ", "https://telegram.dog/ANIME_KALYUG_04"),
         ]
     ]
     await telethn.send_file(event.chat_id, PHOTO, caption=NEKO, buttons=BUTTON)
