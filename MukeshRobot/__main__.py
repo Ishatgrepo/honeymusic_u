@@ -297,19 +297,19 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
-            lol.edit_text("0% ▒▒▒▒▒▒▒▒▒▒")
+            lol.edit_text("*0% ▒▒▒▒▒▒▒▒▒▒*")
             time.sleep(0.5)
-            lol.edit_text("20% ██▒▒▒▒▒▒▒▒")
+            lol.edit_text("*20% ██▒▒▒▒▒▒▒▒*")
             time.sleep(0.3)
-            lol.edit_text("40% ████▒▒▒▒▒▒")
+            lol.edit_text("*40% ████▒▒▒▒▒▒*")
             time.sleep(0.4)
-            lol.edit_text("60% ██████▒▒▒▒")
+            lol.edit_text("*60% ██████▒▒▒▒*")
             time.sleep(0.5)
-            lol.edit_text("80% ████████▒▒")
+            lol.edit_text("*80% ████████▒▒*")
             time.sleep(0.3)
-            lol.edit_text("100% ███████████")
+            lol.edit_text("*100% ██████████*")
             time.sleep(0.4)
-            lol.edit_text("𝘂𝗵𝗵..! 𝗶𝗺 𝗮𝗺 𝗰𝗼𝗺𝗶𝗻𝗴")
+            lol.edit_text("*ᴜʜʜ..! ɪᴍ ᴀᴍ ᴄᴏᴍɪɴɢ*")
             lol.delete()
 
             update.effective_message.reply_photo(random.choice(NYKAA),PM_START_TEXT.format(escape_markdown(first_name),BOT_NAME,sql.num_users(),sql.num_chats()),
@@ -512,22 +512,8 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
                         InlineKeyboardButton(text="▪️ᴀɴɪᴍᴇ▪️", callback_data="source_") 
                     ],
                     [
-                        InlineKeyboardButton(text="▪️ᴜsᴇʀʙᴏᴛ▪️", callback_data="user_help")
-                    ],
-                    [
                         InlineKeyboardButton(text="▪️ʜᴏᴍᴇ▪️", callback_data="mukesh_back")
                     ],
-                ]
-            ),
-            )
-    elif query.data=="user_help":
-        query.message.edit_caption("""**Ⰶ ʜᴇʀᴇ ɪs ᴜsᴇʀʙᴏᴛ ʜᴏsᴛɪɴɢ ᴄᴏᴍᴍᴏɴᴅ**\n\nꕤ Hᴇʏ..! ᴍᴀsᴛᴇʀ..!!👋!\n\nꕤ ɪ' ᴀᴍ ᴘᴏᴡᴇʀғᴜʟ  ɪᴅ ᴜsᴇʀʙᴏᴛ ʜᴇʟᴘᴇʀ?\n\nꕤ ɪ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ʜᴏsᴛ ʏᴏᴜʀ ʟᴇғᴛ ᴄʟɪᴇɴᴛs\n\nꕤ ʜᴇʟᴘᴇʀ ➛ [sᴇssɪᴏɴ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴇʀ ʀᴏʙᴏᴛ](https://t.me/StringSesssionGeneratorRobot)\n\nꕤ ᴛʜᴇɴ ᴍᴀᴋᴇ ᴘʏʀᴏɢʀᴀᴍ sᴛʀɪɴɢ ɢᴇɴᴇʀᴀᴛᴇʀ.\n\nꕤ ɴᴏᴡ🔸/clone {sᴇɴᴅ ʏᴏᴜʀ PʏʀᴏGʀᴀᴍ Sᴛʀɪɴɢ Sᴇssɪᴏɴ...💻""",parse_mode=ParseMode.MARKDOWN,
-
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(text="▪️ʙᴀᴄᴋ▪️", callback_data="Main_help"),InlineKeyboardButton(text="▪️sᴜᴘᴘᴏʀᴛ▪️", callback_data="mukesh_support")
-                    ]
                 ]
             ),
             )
