@@ -102,7 +102,7 @@ buttons = [
 
 roy = [
     [
-        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/SHIVANSH474"),
+        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/ANIME_KALYUG_04"),
         InlineKeyboardButton(text="▪️ꜱᴜᴘᴘᴏʀᴛ▪️", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -193,7 +193,7 @@ NYKAA = [
 ]
 
 
-DONATE_STRING = f"""Ⰶ ʜᴇʏ ʙᴀʙʏ, ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ. ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ @SHIVANSHDEVS ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ @MASTIWITHFRIENDSXD ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
+DONATE_STRING = f"""Ⰶ ʜᴇʏ ʙᴀʙʏ, ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ. ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ @M_NOT_HARSHIT ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ @ANIME_KALYUG_0004 ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -297,19 +297,19 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
-            lol.edit_text("*0% ▒▒▒▒▒▒▒▒▒▒*")
+            lol.edit_text("0% ▒▒▒▒▒▒▒▒▒▒")
             time.sleep(0.5)
-            lol.edit_text("*20% ██▒▒▒▒▒▒▒▒*")
+            lol.edit_text("20% ██▒▒▒▒▒▒▒▒")
             time.sleep(0.3)
-            lol.edit_text("*40% ████▒▒▒▒▒▒*")
+            lol.edit_text("*40% ████▒▒▒▒▒▒")
             time.sleep(0.4)
-            lol.edit_text("*60% ██████▒▒▒▒*")
+            lol.edit_text("60% ██████▒▒▒▒")
             time.sleep(0.5)
-            lol.edit_text("*80% ████████▒▒*")
+            lol.edit_text("80% ████████▒▒")
             time.sleep(0.3)
-            lol.edit_text("*100% ██████████*")
+            lol.edit_text("100% ████████████")
             time.sleep(0.4)
-            lol.edit_text("*ᴜʜʜ..! ɪᴍ ᴀᴍ ᴄᴏᴍɪɴɢ*")
+            lol.edit_text("𝘂𝗵𝗵..! 𝗶𝗺 𝗮𝗺 𝗰𝗼𝗺𝗶𝗻𝗴")
             lol.delete()
 
             update.effective_message.reply_photo(random.choice(NYKAA),PM_START_TEXT.format(escape_markdown(first_name),BOT_NAME,sql.num_users(),sql.num_chats()),
@@ -320,7 +320,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             random.choice(NYKAA),
-            caption="Ⰶ 𝚂𝙴𝙽𝙾𝚁𝙸𝚃𝙰 ࿐ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ♥ \n\n ❖ ᴜᴘᴛɪᴍᴇ ➥ `<code>{}</code>`".format(
+            caption="Ⰶ ˹ ᴀɴɪᴍᴇ ꭙ ʀᴏʙᴏ˼ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ♥ \n\n ❖ ᴜᴘᴛɪᴍᴇ ➥ `<code>{}</code>`".format(
                 uptime
             ),
             reply_markup=InlineKeyboardMarkup(roy),
@@ -467,7 +467,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(text="▪️ʜᴏᴍᴇ▪️", callback_data="mukesh_back"),
-                        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url="https://t.me/SHIVANSH474"),
+                        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url="https://t.me/ANIME_KALYUG_04"),
                     ],
                 ]
             ),
@@ -1133,7 +1133,7 @@ def main():
                     [
                         InlineKeyboardButton(
                             text="🔹ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ🔹",
-                            url="https://t.me/StrangerSuperbot?startgroup=true"
+                            url="https://t.me/ANIME_KALYUGBOT?startgroup=true"
                             )
                        ]
                 ]
@@ -1151,7 +1151,7 @@ def main():
 🔹ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➥ `{tlhver}`
 🔹ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➥ `{pyrover}`
 
-🔹ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [sᴛʀᴀɴɢᴇʀ](https://t.me/shivansh474)
+🔹ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [ʜᴀʀsʜɪᴛ](https://t.me/M_NOT_HARSHIT)
      ━━━━━━━ Ⰶ✿Ⰶ ━━━━━━━
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
