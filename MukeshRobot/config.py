@@ -14,7 +14,7 @@ class Config(object):
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= ""
     # RECOMMENDED
-BOT_USERNAME = getenv("BOT_USERNAME" , "PoliceBot")
+BOT_USERNAME = getenv("BOT_USERNAME" , "StrangerSuperbot")
     DATABASE_URL = getenv("DATABASE_URL", " postgres://iarfggbc:Vxzh_kG7cxa1kHR5faxcd1kuA4R-UT9E@rosie.db.elephantsql.com/iarfggbc")
     CASH_API_KEY = (
         ""  # Get your API key from https://www.alphavantage.co/support/#api-key
