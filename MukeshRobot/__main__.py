@@ -102,7 +102,7 @@ buttons = [
 
 roy = [
     [
-        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/ANIME_KALYUG_04"),
+        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/SHIVANSH474"),
         InlineKeyboardButton(text="▪️ꜱᴜᴘᴘᴏʀᴛ▪️", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -193,7 +193,7 @@ NYKAA = [
 ]
 
 
-DONATE_STRING = f"""Ⰶ ʜᴇʏ ʙᴀʙʏ, ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ. ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ @M_NOT_HARSHIT ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ @ANIME_KALYUG_0004 ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
+DONATE_STRING = f"""Ⰶ ʜᴇʏ ʙᴀʙʏ, ʜᴀᴩᴩʏ ᴛᴏ ʜᴇᴀʀ ᴛʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏɴᴀᴛᴇ. ʏᴏᴜ ᴄᴀɴ ᴅɪʀᴇᴄᴛʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ @SHIVANSHDEVS ғᴏʀ ᴅᴏɴᴀᴛɪɴɢ ᴏʀ ʏᴏᴜ ᴄᴀɴ ᴠɪsɪᴛ ᴍʏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ @MASTIWITHFRIENDSXD ᴀɴᴅ ᴀsᴋ ᴛʜᴇʀᴇ ᴀʙᴏᴜᴛ ᴅᴏɴᴀᴛɪᴏɴ."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -320,7 +320,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             random.choice(NYKAA),
-            caption="Ⰶ ˹ ᴀɴɪᴍᴇ ꭙ ʀᴏʙᴏ˼ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ♥ \n\n ❖ ᴜᴘᴛɪᴍᴇ ➥ `<code>{}</code>`".format(
+            caption="Ⰶ ˹ sᴇɴᴏʀɪᴛᴀ ꭙ ʀᴏʙᴏ˼ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ♥ \n\n ❖ ᴜᴘᴛɪᴍᴇ ➥ `<code>{}</code>`".format(
                 uptime
             ),
             reply_markup=InlineKeyboardMarkup(roy),
@@ -467,7 +467,7 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(text="▪️ʜᴏᴍᴇ▪️", callback_data="mukesh_back"),
-                        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url="https://t.me/ANIME_KALYUG_04"),
+                        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url="https://t.me/SHIVANSH474"),
                     ],
                 ]
             ),
@@ -1147,7 +1147,7 @@ def main():
                     [
                         InlineKeyboardButton(
                             text="🔹ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ🔹",
-                            url="https://t.me/ANIME_KALYUGBOT?startgroup=true"
+                            url="https://t.me/StrangerSuperbot?startgroup=true"
                             )
                        ]
                 ]
@@ -1165,7 +1165,7 @@ def main():
 🔹ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➥ `{tlhver}`
 🔹ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➥ `{pyrover}`
 
-🔹ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [ʜᴀʀsʜɪᴛ](https://t.me/M_NOT_HARSHIT)
+🔹ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [sʜɪᴠᴀɴsʜ-xᴅ](https://t.me/SHIVANSHDEVS)
      ━━━━━━━ Ⰶ✿Ⰶ ━━━━━━━
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
