@@ -1,7 +1,7 @@
 import os
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from MukeshRobot import telethn as tbot
+from MukeshRobot import telethn as app
 from MukeshRobot.events import register
 import requests
 
