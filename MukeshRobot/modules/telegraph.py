@@ -8,20 +8,25 @@ from MukeshRobot.events import register
 def upload_file(file_path):
     url = "https://catbox.moe/user/api.php"
     data = {"reqtype": "fileupload", "json": "true"}
-    files = {"fileToUpload": open(file_path, "rb")}
-    response = requests.post(url, data=data, files=files)
+    with open(file_path, "rb") as file:
+        files = {"fileToUpload": file}
+        response = requests.post(url, data=data, files=files)
 
     if response.status_code == 200:
-        return True, response.text.strip()
+        try:
+            json_response = response.json()
+            return True, json_response.get("url", "Unknown URL")
+        except Exception:
+            return False, "Failed to parse JSON response."
     else:
-        return False, f"ᴇʀʀᴏʀ: {response.status_code} - {response.text}"
+        return False, f"Error: {response.status_code} - {response.text}"
 
 
 @register(pattern="^/tg(m|t) ?(.*)")
 async def get_link_group(client, message):
     if not message.reply_to_message:
         return await message.reply_text(
-            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇᴅɪᴀ ᴛᴏ ᴜᴘʟᴏᴀᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴘʜ"
+            "❍ Please reply to a media file to upload it to Catbox."
         )
 
     media = message.reply_to_message
@@ -34,56 +39,49 @@ async def get_link_group(client, message):
         file_size = media.document.file_size
 
     if file_size > 200 * 1024 * 1024:
-        return await message.reply_text("Pʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴇᴅɪᴀ ғɪʟᴇ ᴜɴᴅᴇʀ 200MB.")
+        return await message.reply_text("❍ Please provide a media file under 200MB.")
 
     try:
-        text = await message.reply("❍ ᴘʀᴏᴄᴇssɪɴɢ...")
+        text = await message.reply_text("❍ Processing...")
 
         async def progress(current, total):
             try:
-                await text.edit_text(f"❍ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ... {current * 100 / total:.1f}%")
+                await text.edit_text(f"❍ Downloading... {current * 100 / total:.1f}%")
             except Exception:
                 pass
+
+        local_path = await media.download(progress=progress)
+        await text.edit_text("❍ Uploading to Catbox...")
+
+        success, upload_path = upload_file(local_path)
+
+        if success:
+            await text.edit_text(
+                f"❍ File uploaded successfully!\n[Tap here to view your file]({upload_path})",
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "❍ View File", url=upload_path
+                            )
+                        ]
+                    ]
+                ),
+                disable_web_page_preview=True,
+            )
+        else:
+            await text.edit_text(
+                f"❍ An error occurred while uploading your file.\nReason: {upload_path}"
+            )
 
         try:
-            local_path = await media.download(progress=progress)
-            await text.edit_text("❍ ᴜᴘʟᴏᴀᴅɪɴɢ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ...")
-
-            success, upload_path = upload_file(local_path)
-
-            if success:
-                await text.edit_text(
-                    f"❍ | [ᴛᴀᴘ ᴛʜᴇ ʟɪɴᴋ]({upload_path})",
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    "❍ ᴄʀᴇᴀᴛᴇ ʙʏ ˹ sᴛʀᴀɴɢᴇʀ ™˼",
-                                    url=upload_path,
-                                )
-                            ]
-                        ]
-                    ),
-                )
-            else:
-                await text.edit_text(
-                    f"❍ ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴜᴘʟᴏᴀᴅɪɴɢ ʏᴏᴜʀ ғɪʟᴇ\n{upload_path}"
-                )
-
-            try:
-                os.remove(local_path)
-            except Exception:
-                pass
-
+            os.remove(local_path)
         except Exception as e:
-            await text.edit_text(f"❍ ғɪʟᴇ ᴜᴘʟᴏᴀᴅ ғᴀɪʟᴇᴅ\n\n❍ <i>ʀᴇᴀsᴏɴ: {e}</i>")
-            try:
-                os.remove(local_path)
-            except Exception:
-                pass
-            return
-    except Exception:
-        pass
+            print(f"Error while deleting file: {e}")
+
+    except Exception as e:
+        await text.edit_text(f"❍ File upload failed.\n\n❍ Reason: {e}")
+        return
 
 
 __help__ = """
