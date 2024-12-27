@@ -136,7 +136,7 @@ hack_you = [
     "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: /app/.cache/pip/wheels/a2/9f/b5/650dd4d533f0a17ca30cc11120b176643d27e0e1f5c9876b5b",
     "`Hacking... 84%\n█████████████████████▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: /app/.cache/pip/wheels/a2/9f/b5/650dd4d533f0a17ca30cc11120b176643d27e0e1f5c9876b5b\n\n **Successfully Hacked Telegram Server Database**",
     "`Hacking... 100%\n█████████HACKED███████████ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: /app/.cache/pip/wheels/a2/9f/b5/650dd4d533f0a17ca30cc11120b176643d27e0e1f5c9876b5b\n\n **Successfully Hacked Telegram Server Database**\n\n\n🔹Output: Generating.....",
-    "`Targeted Account Hacked...\n\nPay 9965566$ To`Or Your GirlFriend Number To  My Master `To Remove this hack..`\n\nTERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: /app/.cache/pip/wheels/a2/9f/b5/650dd4d533f0a17ca30cc11120b176643d27e0e1f5c9876b5b\n\n **Successfully Hacked this Account From Telegram Database \nᴄᴏɴᴛᴀᴄᴛ  ᴏᴡɴᴇʀ ᴛᴏ ʀᴇᴍᴏᴠᴇ ʜᴀᴄᴋ @SHIVANSH474 **\n\n\n🔹**Output:** Successful",
+    f"`Targeted Account Hacked...\n\nPay 9965566$ To`Or Your GirlFriend Number To  My Master `To Remove this hack..`\n\nTERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: /app/.cache/pip/wheels/a2/9f/b5/650dd4d533f0a17ca30cc11120b176643d27e0e1f5c9876b5b\n\n **Successfully Hacked this Account From Telegram Database \nᴄᴏɴᴛᴀᴄᴛ  ᴏᴡɴᴇʀ ᴛᴏ ʀᴇᴍᴏᴠᴇ ʜᴀᴄᴋ {OWNER_ID} **\n\n\n🔹**Output:** Successful",
 ]
 
 
@@ -211,11 +211,11 @@ police_ani = [
 @run_async
 def brainanimation(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text("❍ ᴘʀᴏᴄᴇssɪɴɢ...")
+    msg = update.effective_message.reply_text("PROCESSING...")
     for x in range(EDIT_TIMES):
         msg.edit_text(brain_chain[x % 14])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("❖ ʏᴏᴜ ᴘᴜᴛ ʙʀᴀɪɴ ɪɴ ᴅᴜsᴛʙɪɴ")
+    msg.edit_text("YOU PUT BRAIN IN DUSTBIN")
 
 
 @user_admin
@@ -238,7 +238,7 @@ def policeanimation(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(police_ani[x % 11])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("❍ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ ɪs ʜᴇʀᴇ")
+    msg.edit_text("Mastermind POLICE IS HERE")
 
 
 @user_admin
@@ -260,19 +260,19 @@ def bombs(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(bomb_ettu[x % 9])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("❍ ʀɪᴘ ᴘʟᴏx...")
+    msg.edit_text("RIP PLOX...")
 
 
 @user_admin
 @run_async
 def hack(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
-    msg = update.effective_message.reply_text("❖ ᴛᴀʀɢᴇᴛ sᴇʟᴇᴄᴛᴇᴅ")
+    msg = update.effective_message.reply_text("Target selected")
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x % 18])
         time.sleep(EDIT_SLEEP)
     msg.edit_text(
-        "❍ ᴘᴅғ ᴄʀᴇᴀᴛᴇᴅ ᴄʟɪᴄᴋ ʟɪɴᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴅᴀᴛᴀ.\n\n❍ ᴅᴏɴ'ᴛ ᴡᴏʀʀʏ ᴏɴʟʏ ɪ ᴄᴀɴ ᴏᴘᴇɴ ᴛʜɪs.. ɪғ ᴜ ᴅᴏɴ'ᴛ ʙᴇʟɪᴇᴠᴇ ᴛʀʏ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ.\n\n❍ https://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing"
+        "`pdf created click link below to download data\n\n😂 Don't worry only i can open this 😎😎.. If u don't Believe try to download` 🙂\n\nhttps://drive.google.com/file/d/1hPUfr27UtU0XjtC20lXjY9G3D9jR5imj/view?usp=sharing"
     )
 
 
@@ -284,7 +284,7 @@ def love(update: Update, context: CallbackContext):
     for x in range(EDIT_TIMES):
         msg.edit_text(love_siren[x % 35])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text("🌹 ᴛʀᴜᴇ ʟᴏᴠᴇ 💞")
+    msg.edit_text("True Love💞")
 
 
 @user_admin
@@ -316,13 +316,13 @@ dispatcher.add_handler(CLOCKANIMATION_HANDLER)
 dispatcher.add_handler(BRAINANIMATION_HANDLER)
 
 __help__ = """
-*ꕤ ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ ꕤ*
 
- ❖ /love ➛ ᴜsᴇ ɪᴛ ɪғ ᴜ ʜᴀᴠᴇ ɢɪʀʟғʀɪᴇɴᴅ
- ❖ /hack ➛ ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ
- ❖ /moon ➛ ᴛᴏ ᴡɪsʜ ɢɴ ᴛᴏ ᴜʀ ʟᴏᴠᴇ
- ❖ /kill ➛ ᴛᴏ ᴋɪʟʟ  ᴜʀ ɢғ ᴅᴀᴅ
- ❖ /bombs ➛ ᴛᴏ sᴜᴄɪᴅᴇ ᴜʀsᴇʟғ
- ❖ /police ➛ ᴛᴏ ᴄᴀʟʟ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ
+*ғᴀᴋᴇ ᴀɴɪᴍᴀᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅ*
+ ❍ /love - ᴜsᴇ ɪᴛ ɪғ ᴜ ʜᴀᴠᴇ ɢɪʀʟғʀɪᴇɴᴅ
+ ❍ /hack -  ᴛᴏ ʜᴀᴄᴋ ᴀɴʏ ᴜsᴇʀ ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ
+ ❍ /moon    - ᴛᴏ ᴡɪsʜ ɢɴ ᴛᴏ ᴜʀ ʟᴏᴠᴇ
+ ❍ /kill  -  ᴛᴏ ᴋɪʟʟ  ᴜʀ ɢғ ᴅᴀᴅ
+ ❍ /bombs -  ᴛᴏ sᴜᴄɪᴅᴇ ᴜʀsᴇʟғ
+ ❍ /police - ᴛᴏ ᴄᴀʟʟ ᴍᴀsᴛᴇʀᴍɪɴᴅ ᴘᴏʟɪᴄᴇ
 """
-__mod_name__ = "ᴀɴɪᴍᴀᴛɪᴏɴ"
+__mod_name__ = "Gᴀᴍᴇ"
