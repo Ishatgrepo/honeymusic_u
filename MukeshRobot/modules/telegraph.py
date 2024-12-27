@@ -4,10 +4,6 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from MukeshRobot import telethn as app
 from MukeshRobot.events import register
-TMP_DOWNLOAD_DIRECTORY = "./"
-telegraph = Telegraph(domain="graph.org")
-r = telegraph.create_account(short_name="Controller")
-auth_url = r["auth_url"]
 
 def upload_file(file_path):
     url = "https://catbox.moe/user/api.php"
