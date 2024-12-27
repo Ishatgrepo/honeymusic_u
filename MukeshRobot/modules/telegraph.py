@@ -1,88 +1,90 @@
 import os
-from datetime import datetime
-
-from PIL import Image
-from telegraph import Telegraph, exceptions, upload_file
-
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from MukeshRobot import telethn as tbot
 from MukeshRobot.events import register
-
-Mukesh = "Controller"
-TMP_DOWNLOAD_DIRECTORY = "./"
-telegraph = Telegraph(domain="graph.org")
-r = telegraph.create_account(short_name=Mukesh)
-auth_url = r["auth_url"]
+import requests
 
 
-@register(pattern="^/tg(m|t) ?(.*)")
-async def _(event):
-    if event.fwd_from:
-        return
-    optional_title = event.pattern_match.group(2)
-    if event.reply_to_msg_id:
-        start = datetime.now()
-        r_message = await event.get_reply_message()
-        input_str = event.pattern_match.group(1)
-        if input_str == "m":
-            downloaded_file_name = await tbot.download_media(
-                r_message, TMP_DOWNLOAD_DIRECTORY
-            )
-            end = datetime.now()
-            ms = (end - start).seconds
-            h = await event.reply(
-                "❍ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ᴛᴏ {} ɪɴ {} sᴇᴄᴏɴᴅs.".format(downloaded_file_name, ms)
-            )
-            if downloaded_file_name.endswith((".webp")):
-                resize_image(downloaded_file_name)
-            try:
-                start = datetime.now()
-                media_urls = upload_file(downloaded_file_name)
-            except exceptions.TelegraphException as exc:
-                await h.edit("ERROR: " + str(exc))
-                os.remove(downloaded_file_name)
-            else:
-                end = datetime.now()
-                (end - start).seconds
-                os.remove(downloaded_file_name)
-                await h.edit(
-                    "✦ ʏᴏᴜʀ ɢʀᴀᴘʜ ᴜʀʟ ɪs ʀᴇᴀᴅʏ ʙᴀʙʏ. ✦\n\n❍ https://graph.org{}".format(media_urls[0]),
-                    link_preview=True,
-                )
-        elif input_str == "t":
-            user_object = await tbot.get_entity(r_message.sender_id)
-            title_of_page = user_object.first_name
-            if optional_title:
-                title_of_page = optional_title
-            page_content = r_message.message
-            if r_message.media:
-                if page_content != "":
-                    title_of_page = page_content
-                downloaded_file_name = await tbot.download_media(
-                    r_message, TMP_DOWNLOAD_DIRECTORY
-                )
-                m_list = None
-                with open(downloaded_file_name, "rb") as fd:
-                    m_list = fd.readlines()
-                for m in m_list:
-                    page_content += m.decode("UTF-8") + "\n"
-                os.remove(downloaded_file_name)
-            page_content = page_content.replace("\n", "<br>")
-            response = telegraph.create_page(title_of_page, html_content=page_content)
-            end = datetime.now()
-            ms = (end - start).seconds
-            await event.reply(
-                "❍ ᴘᴀsᴛᴇᴅ ᴛᴏ https://graph.org/{} ɪɴ {} sᴇᴄᴏɴᴅs.".format(
-                    response["path"], ms
-                ),
-                link_preview=True,
-            )
+def upload_file(file_path):
+    url = "https://catbox.moe/user/api.php"
+    data = {"reqtype": "fileupload", "json": "true"}
+    files = {"fileToUpload": open(file_path, "rb")}
+    response = requests.post(url, data=data, files=files)
+
+    if response.status_code == 200:
+        return True, response.text.strip()
     else:
-        await event.reply("❍ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ᴀ ᴘᴇʀᴍᴀɴᴇɴᴛ ᴛᴇʟᴇɢʀᴀ.ᴘʜ ʟɪɴᴋ.")
+        return False, f"ᴇʀʀᴏʀ: {response.status_code} - {response.text}"
 
 
-def resize_image(image):
-    im = Image.open(image)
-    im.save(image, "PNG")
+@app.on_message(filters.command(["tgm", "tgt", "telegraph", "tl"]))
+async def get_link_group(client, message):
+    if not message.reply_to_message:
+        return await message.reply_text(
+            "❍ ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇᴅɪᴀ ᴛᴏ ᴜᴘʟᴏᴀᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴘʜ"
+        )
+
+    media = message.reply_to_message
+    file_size = 0
+    if media.photo:
+        file_size = media.photo.file_size
+    elif media.video:
+        file_size = media.video.file_size
+    elif media.document:
+        file_size = media.document.file_size
+
+    if file_size > 200 * 1024 * 1024:
+        return await message.reply_text("Pʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴇᴅɪᴀ ғɪʟᴇ ᴜɴᴅᴇʀ 200MB.")
+
+    try:
+        text = await message.reply("❍ ᴘʀᴏᴄᴇssɪɴɢ...")
+
+        async def progress(current, total):
+            try:
+                await text.edit_text(f"❍ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ... {current * 100 / total:.1f}%")
+            except Exception:
+                pass
+
+        try:
+            local_path = await media.download(progress=progress)
+            await text.edit_text("❍ ᴜᴘʟᴏᴀᴅɪɴɢ ᴛᴏ ᴛᴇʟᴇɢʀᴀᴘʜ...")
+
+            success, upload_path = upload_file(local_path)
+
+            if success:
+                await text.edit_text(
+                    f"❍ | [ᴛᴀᴘ ᴛʜᴇ ʟɪɴᴋ]({upload_path})",
+                    reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton(
+                                    "❍ ᴄʀᴇᴀᴛᴇ ʙʏ ˹ sᴛʀᴀɴɢᴇʀ ™˼",
+                                    url=upload_path,
+                                )
+                            ]
+                        ]
+                    ),
+                )
+            else:
+                await text.edit_text(
+                    f"❍ ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ᴜᴘʟᴏᴀᴅɪɴɢ ʏᴏᴜʀ ғɪʟᴇ\n{upload_path}"
+                )
+
+            try:
+                os.remove(local_path)
+            except Exception:
+                pass
+
+        except Exception as e:
+            await text.edit_text(f"❍ ғɪʟᴇ ᴜᴘʟᴏᴀᴅ ғᴀɪʟᴇᴅ\n\n❍ <i>ʀᴇᴀsᴏɴ: {e}</i>")
+            try:
+                os.remove(local_path)
+            except Exception:
+                pass
+            return
+    except Exception:
+        pass
 
 
 __help__ = """
