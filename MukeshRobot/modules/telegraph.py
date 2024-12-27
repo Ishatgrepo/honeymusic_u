@@ -21,7 +21,7 @@ def upload_file(file_path):
         return False, f"ᴇʀʀᴏʀ: {response.status_code} - {response.text}"
 
 
-@app.on_message(filters.command(["tgm", "tgt", "telegraph", "tl"]))
+@register(pattern="^/tg(m|t) ?(.*)")
 async def get_link_group(client, message):
     if not message.reply_to_message:
         return await message.reply_text(
