@@ -22,7 +22,7 @@ def upload_file(file_path):
         return False, f"Error: {response.status_code} - {response.text}"
 
 
-@register(pattern="^/tg(m|t) ?(.*)")
+@register(pattern="^/mtg(m|t) ?(.*)")
 async def get_link_group(client, message):
     if not message.reply_to_message:
         return await message.reply_text(
