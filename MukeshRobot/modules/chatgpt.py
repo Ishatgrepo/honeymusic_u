@@ -10,7 +10,7 @@ BASE_URL = "https://api.together.xyz/v1/chat/completions"
 
 @Mukesh.on_message(
     filters.command(
-        ["chatgpt", "ai", "ask", "gpt", "solve"],
+        ["mchatgpt", "mai", "mask", "mgpt", "msolve"],
         prefixes=["+", ".", "/", "-", "", "$", "#", "&"],
     )
 )
