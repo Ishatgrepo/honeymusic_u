@@ -6,7 +6,7 @@ from pyrogram import filters
 from MukeshRobot import pbot as app
 
 
-@app.on_message(filters.command("upscale"))
+@app.on_message(filters.command("mupscale"))
 async def upscale_image(client, message):
     try:
         # Check if the replied message contains a photo
