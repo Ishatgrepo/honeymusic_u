@@ -7,6 +7,8 @@ from MukeshRobot import pbot as app
 
 # -------------------------------
 
+start_time = time.time()
+
 def time_formatter(milliseconds: float) -> str:
     seconds, milliseconds = divmod(milliseconds, 1000)
     minutes, seconds = divmod(seconds, 60)
@@ -19,6 +21,12 @@ def size_formatter(bytes: int) -> str:
             break
         bytes /= 1024.0
     return f"{bytes:.2f} {unit}"
+
+def is_protection_enabled():
+    setting = settings_collection.find_one({"_id": "global_settings"})
+    return setting.get("protection_status", False)
+
+
 
 # -----------------------------------------------------------
 
