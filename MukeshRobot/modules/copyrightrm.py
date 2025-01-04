@@ -34,19 +34,80 @@ FORBIDDEN_KEYWORDS = [
     "void", "nextInt"
 ]
 
-@app.on_message(filters.group)
-async def handle_message(client, message):
-    # Check for text and caption
-    if message.text and any(keyword in message.text for keyword in FORBIDDEN_KEYWORDS):
-        logging.info(f"✦ Deleting message with ID {message.id}")
-        await message.delete()
-        user_mention = message.from_user.mention if message.from_user else "User"
-        await message.reply_text(f"✦ Hey {user_mention}, please don't send such messages.")
-    elif message.caption and any(keyword in message.caption for keyword in FORBIDDEN_KEYWORDS):
-        logging.info(f"✦ Deleting message with ID {message.id}")
-        await message.delete()
-        user_mention = message.from_user.mention if message.from_user else "User"
-        await message.reply_text(f"✦ Hey {user_mention}, please avoid sending such content.")
+def normalize_text(text):
+    if not text:
+        return ""
+    try:
+        # Normalize to NFKC form (decompose characters like "é" to "e" + "´")
+        text = unicodedata.normalize("NFKC", text)
+        
+        # Fix any corrupted Unicode text using ftfy
+        text = fix_text(text)
+        
+        # Use unidecode to remove non-ASCII characters and replace them with nearest ASCII equivalent
+        text = unidecode(text)
+        
+        # Final cleanup to remove any non-printable or unwanted characters
+        text = ''.join(c for c in text if unicodedata.category(c) != 'Cc')
+        
+        return text
+    except UnicodeDecodeError as e:
+        logging.error(f"UnicodeDecodeError encountered while normalizing text: {e}")
+        try:
+            # Attempt to decode using utf-8 and ignore errors
+            text = text.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
+            return text
+        except Exception as inner_e:
+            logging.error(f"Error while attempting to handle broken encoding: {inner_e}")
+            return text  # Return text as-is if error persists
+    except Exception as e:
+        logging.error(f"Error encountered while normalizing text: {e}")
+        return text  # Return text as-is if any other error occurs
+
+@app.on_message(filters.command("protect"))
+async def protect_command_handler(_, message: Message):
+    command = message.text.strip().lower()
+    
+    if command == "/protect on":
+        settings_collection.update_one(
+            {"_id": "global_settings"},
+            {"$set": {"protection_status": True}}
+        )
+        await message.reply_text("🔒 **Pʀᴏᴛᴇᴄᴛɪᴏɴ Eɴᴀʙʟᴇᴅ**!.")
+    
+    elif command == "/protect off":
+        settings_collection.update_one(
+            {"_id": "global_settings"},
+            {"$set": {"protection_status": False}}
+        )
+        await message.reply_text("🔓 **Pʀᴏᴛᴇᴄᴛɪᴏɴ Dɪsᴀʙʟᴇᴅ**!.")
+    
+    else:
+        await message.reply_text("**➥ Usᴇ ᴄᴏʀʀᴇᴄᴛ ᴏɴ ⤒ ᴏғғ**\n\n⇝ `/protect on` - ᴇɴᴀʙʟᴇ\n⇝ `/protect off` - ᴅɪsᴀʙʟᴇ")
+
+
+# Handle Forbidden Keywords
+
+@app.on_message()
+async def handle_message(client, message: Message):
+    if is_protection_enabled():
+        # Normalize message text and caption
+        text = normalize_text(message.text) if message.text else ""
+        caption = normalize_text(message.caption) if message.caption else ""
+
+        # Check if any forbidden keyword is in the normalized text or caption
+        if any(keyword in text.lower() for keyword in FORBIDDEN_KEYWORDS):
+            logging.info(f"Deleting message with ID {message.id} due to forbidden keyword in text")
+            await message.delete()
+            await message.reply_text(
+                f"@{message.from_user.username} Dᴏɴ'ᴛ sᴇɴᴅ ɴᴇxᴛ ᴛɪᴍᴇ ᴏᴛʜᴇʀᴡɪsᴇ ʙᴀɴɴᴇᴅ ʙʏ ᴀᴅᴍɪɴ !"
+            )
+        elif any(keyword in caption.lower() for keyword in FORBIDDEN_KEYWORDS):
+            logging.info(f"Deleting message with ID {message.id} due to forbidden keyword in caption")
+            await message.delete()
+            await message.reply_text(
+                f"@{message.from_user.username} Dᴏɴ'ᴛ sᴇɴᴅ ɴᴇxᴛ ᴛɪᴍᴇ ᴏᴛʜᴇʀᴡɪsᴇ ʙᴀɴɴᴇᴅ ʙʏ ᴀᴅᴍɪɴ !"
+            )
 
 # -----------------------------------------------------------
 @app.on_edited_message(filters.group & ~filters.me)
