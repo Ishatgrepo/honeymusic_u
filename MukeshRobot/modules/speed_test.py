@@ -47,7 +47,7 @@ def speedtestxyz_callback(update: Update, context: CallbackContext):
             replymsg += f"\n❍ ᴅᴏᴡɴʟᴏᴀᴅ ➛ `{convert(result['download'])}ᴍʙ/s`\n❍ ᴜᴘʟᴏᴀᴅ ➛ `{convert(result['upload'])}ᴍʙ/s`\n❍ ᴘɪɴɢ ➛ `{result['ping']}`"
             update.effective_message.edit_text(replymsg, parse_mode=ParseMode.MARKDOWN)
     else:
-        query.answer("❍ ʏᴏᴜ ᴀʀᴇ ʀᴇǫᴜɪʀᴇᴅ ᴛᴏ ᴊᴏɪɴ @the_friendz ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
+        query.answer("❍ ʏᴏᴜ ᴀʀᴇ ʀᴇǫᴜɪʀᴇᴅ ᴛᴏ ᴊᴏɪɴ  @MASTIWITHFRIENDSXD ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
 
 
 SPEED_TEST_HANDLER = DisableAbleCommandHandler(
