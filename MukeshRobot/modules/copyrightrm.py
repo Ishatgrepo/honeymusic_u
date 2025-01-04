@@ -4,6 +4,12 @@ import logging
 from pyrogram.types import *
 from pyrogram.errors import FloodWait
 from MukeshRobot import pbot as app
+import unicodedata
+from ftfy import fix_text
+from unidecode import unidecode
+import psutil
+import time
+import platform
 
 # -------------------------------
 
