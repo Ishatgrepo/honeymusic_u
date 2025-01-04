@@ -26,8 +26,6 @@ def is_protection_enabled():
     setting = settings_collection.find_one({"_id": "global_settings"})
     return setting.get("protection_status", False)
 
-
-
 # -----------------------------------------------------------
 
 FORBIDDEN_KEYWORDS = [
