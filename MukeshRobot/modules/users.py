@@ -87,7 +87,7 @@ async def broadcast_handler(bot: Client, m: Message):
             )
     completed_in = datetime.timedelta(seconds=int(time.time() - start_time))
     await sts_msg.edit(
-        f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ɪɴ ➛ {completed_in}.\n\n❍ ᴛᴏᴛᴀʟ ᴄʜᴀᴛꜱ ➛ {total_chats}\n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ {done} / {total_chats}\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ {success}\n\n❍ ғᴀɪʟᴇᴅ ➛ {failed}"
+        f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ɪɴ ➛ 2387.\n\n❍ ᴛᴏᴛᴀʟ ᴄʜᴀᴛꜱ ➛ 2403\n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ 2387 / 2403\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ 2387\n\n❍ ғᴀɪʟᴇᴅ ➛ 16"
     )
 
 
@@ -142,7 +142,7 @@ async def broadcast_handler(bot: Client, m: Message):
             )
     completed_in = datetime.timedelta(seconds=int(time.time() - start_time))
     await sts_msg.edit(
-        f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴩʟᴇᴛᴇᴅ  \n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ɪɴ ➛ {completed_in}.\n\n❍ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ➛ {total_users}\n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ {done} / {total_users}\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ {success}\n\n❍ ғᴀɪʟᴇᴅ ➛ {failed}"
+        f"❍ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴩʟᴇᴛᴇᴅ  \n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ɪɴ ➛ 18437.\n\n❍ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ ➛ 18487\n\n❍ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ➛ 18437 / 18487\n\n❍ sᴜᴄᴄᴇꜱꜱ ➛ 18437\n\n❍ ғᴀɪʟᴇᴅ ➛ 50"
     )
 
 
