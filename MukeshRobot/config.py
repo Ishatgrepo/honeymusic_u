@@ -4,22 +4,22 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = "" # integer value, dont use ""
-    API_HASH = ""
-    TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
-    OWNER_ID = 6762113050 # If you dont know, run the bot and do /id in your private chat with it, also an integer
+    API_ID = "21966961" # integer value, dont use ""
+    API_HASH = "fcc0f58560bc9f5ebc9c4207b3d26f2d"
+    TOKEN = "7597078204:AAFB5Ku0T6G3Ku5XHDvo3TPdFrZKjTR65sU"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    OWNER_ID = 1094941160 # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
-    SUPPORT_CHAT = "MASTIWITHFRIENDSXD"  # Your own group for support, do not add the @
+    SUPPORT_CHAT = "aspirantDiscuss"  # Your own group for support, do not add the @
     START_IMG = ""
     EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
-    MONGO_DB_URI= ""
+    MONGO_DB_URI= "mongodb+srv://as1:PUMJvPgRUPEOR0Rz@as1.nam95.mongodb.net/"
     # RECOMMENDED
-BOT_USERNAME = getenv("BOT_USERNAME" , "StrangerSuperbot")
-    DATABASE_URL = getenv("DATABASE_URL", " postgres://iarfggbc:Vxzh_kG7cxa1kHR5faxcd1kuA4R-UT9E@rosie.db.elephantsql.com/iarfggbc")
-    CASH_API_KEY = (
-        ""  # Get your API key from https://www.alphavantage.co/support/#api-key
-    )
-    TIME_API_KEY = ""
+BOT_USERNAME = getenv("BOT_USERNAME" , "Honeymusics_bot")
+    #DATABASE_URL = getenv("DATABASE_URL", "")
+    #CASH_API_KEY = (
+     #   ""  # Get your API key from https://www.alphavantage.co/support/#api-key
+    #)
+    #TIME_API_KEY = ""
     # Get your API key from https://timezonedb.com/api
 
     # Optional fields

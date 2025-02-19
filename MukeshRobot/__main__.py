@@ -102,7 +102,7 @@ buttons = [
 
 roy = [
     [
-        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/SHIVANSH474"),
+        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url=f"https://t.me/h_oneysingh"),
         InlineKeyboardButton(text="▪️ꜱᴜᴘᴘᴏʀᴛ▪️", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -320,7 +320,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             random.choice(NYKAA),
-            caption="Ⰶ ˹ sᴇɴᴏʀɪᴛᴀ ꭙ ʀᴏʙᴏ˼ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ♥ \n\n ❖ ᴜᴘᴛɪᴍᴇ ➥ `<code>{}</code>`".format(
+            caption="Ⰶ ˹ Hᴏɴᴇy ꭙ ʀᴏʙᴏ˼ ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ ♥ \n\n ❖ ᴜᴘᴛɪᴍᴇ ➥ `<code>{}</code>`".format(
                 uptime
             ),
             reply_markup=InlineKeyboardMarkup(roy),
@@ -408,7 +408,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
 
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="▪️ʙᴀᴄᴋ▪️", callback_data="help_back"),InlineKeyboardButton(text="▪️sᴜᴘᴘᴏʀᴛ▪️", callback_data="mukesh_support")]]
+                    [[InlineKeyboardButton(text="▪️ʙᴀᴄᴋ▪️", callback_data="help_back"),InlineKeyboardButton(text="▪️sᴜᴘᴘᴏʀᴛ▪️", callback_data="honey_support")]]
                 ),
             )
 
@@ -466,8 +466,8 @@ def Mukesh_about_callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="▪️ʜᴏᴍᴇ▪️", callback_data="mukesh_back"),
-                        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url="https://t.me/SHIVANSH474"),
+                        InlineKeyboardButton(text="▪️ʜᴏᴍᴇ▪️", callback_data="h_oneysingh"),
+                        InlineKeyboardButton(text="▪️ᴜᴘᴅᴀᴛᴇ▪️", url="https://t.me/aspirantDiscuss"),
                     ],
                 ]
             ),
@@ -1095,9 +1095,9 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 6762113050:
+        if OWNER_ID != 1094941160:
             update.effective_message.reply_text(
-                f"Ⰶ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://github.com/itzshukla/nothing?)"
+                f"Ⰶ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://github.com/honeyrs?)"
                 f"\n\nⰆ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ᴛᴏ ᴛʜᴇ ᴩᴇʀsᴏɴ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴜɴɴɪɴɢ ᴍᴇ: [ʜᴇʀᴇ]",
                 parse_mode=ParseMode.MARKDOWN,
 
@@ -1147,7 +1147,7 @@ def main():
                     [
                         InlineKeyboardButton(
                             text="🔹ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ🔹",
-                            url="https://t.me/vzsrobot?startgroup=true"
+                            url="https://t.me/honeymusics_bot?startgroup=true"
                             )
                        ]
                 ]
@@ -1165,7 +1165,7 @@ def main():
 🔹ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ ➥ `{tlhver}`
 🔹ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ ➥ `{pyrover}`
 
-🔹ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [sʜɪᴠᴀɴsʜ-xᴅ](https://t.me/STRANGERDEVS)
+🔹ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [sʜɪᴠᴀɴsʜ-xᴅ](https://t.me/H_oneysingh)
      ━━━━━━━ Ⰶ✿Ⰶ ━━━━━━━
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
