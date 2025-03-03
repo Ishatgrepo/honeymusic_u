@@ -62,5 +62,5 @@ MukeshAPI
 psutil
 ftfy
 unidecode
-openai==1.26.0
+openai==1.65.2
 numpy==1.26.3
